@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Южна Америка – Образователен Портал</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a7a4a;
+  --green-light: #2ecc71;
+  --teal: #0e8a7d;
+  --blue: #1a5276;
+  --blue-light: #2980b9;
+  --earth: #a0522d;
+  --sand: #f5e6c8;
+  --white: #ffffff;
+  --dark: #0d1f17;
+  --accent: #f39c12;
+  --red: #e74c3c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:#0d1f17;color:#e8f5e9;overflow-x:hidden}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#0d1f17}
+::-webkit-scrollbar-thumb{background:var(--green);border-radius:3px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,31,23,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,204,113,0.2);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--green-light);font-weight:700;letter-spacing:1px}
+.nav-links{display:flex;gap:0.5rem;flex-wrap:wrap}
+.nav-links a{color:#a8d5b5;text-decoration:none;font-size:0.75rem;font-weight:600;padding:5px 10px;border-radius:20px;transition:all 0.3s;letter-spacing:0.5px;text-transform:uppercase}
+.nav-links a:hover{background:rgba(46,204,113,0.15);color:var(--green-light)}
+
+/* HERO */
+#hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#0d1f17 0%,#1a3a28 50%,#0a2a20 100%)}
+.hero-bg{position:absolute;inset:0;background-image:
+  radial-gradient(ellipse at 20% 50%, rgba(46,204,113,0.08) 0%, transparent 60%),
+  radial-gradient(ellipse at 80% 20%, rgba(26,122,74,0.12) 0%, transparent 50%),
+  radial-gradient(ellipse at 60% 80%, rgba(14,138,125,0.08) 0%, transparent 50%)}
+.hero-particles{position:absolute;inset:0;overflow:hidden}
+.hero-particles span{position:absolute;width:2px;height:2px;background:rgba(46,204,113,0.5);border-radius:50%;animation:float linear infinite}
+@keyframes float{0%{transform:translateY(100vh) translateX(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) translateX(50px);opacity:0}}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px}
+.hero-badge{display:inline-block;background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.3);color:var(--green-light);font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;border-radius:30px;margin-bottom:2rem;animation:fadeDown 1s ease both}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7rem);font-weight:900;line-height:1;margin-bottom:1.5rem;animation:fadeDown 1s ease 0.2s both}
+.hero-title span{display:block;color:var(--green-light);text-shadow:0 0 60px rgba(46,204,113,0.4)}
+.hero-subtitle{font-size:1.2rem;color:#a8d5b5;line-height:1.7;max-width:600px;margin:0 auto 3rem;animation:fadeDown 1s ease 0.4s both}
+.hero-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;animation:fadeDown 1s ease 0.6s both}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1}
+.hero-stat-label{font-size:0.75rem;color:#7fb89a;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--green),var(--teal));color:#fff;padding:16px 40px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;letter-spacing:1px;transition:all 0.3s;animation:fadeDown 1s ease 0.8s both;box-shadow:0 10px 40px rgba(46,204,113,0.3)}
+.hero-cta:hover{transform:translateY(-3px);box-shadow:0 15px 50px rgba(46,204,113,0.5)}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:#7fb89a;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;animation:bounce 2s infinite}
+.scroll-indicator::after{content:'';width:1px;height:50px;background:linear-gradient(to bottom,var(--green-light),transparent)}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+section{padding:80px 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:60px}
+.section-tag{display:inline-block;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);color:var(--green-light);font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:1rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;margin-bottom:1rem}
+.section-desc{color:#7fb89a;font-size:1rem;max-width:600px;margin:0 auto;line-height:1.7}
+
+/* OVERVIEW CARDS */
+#overview{background:linear-gradient(180deg,#0d1f17 0%,#0f2820 100%)}
+.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.overview-card{background:rgba(255,255,255,0.03);border:1px solid rgba(46,204,113,0.1);border-radius:16px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}
+.overview-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--teal))}
+.overview-card:hover{transform:translateY(-5px);border-color:rgba(46,204,113,0.3);background:rgba(255,255,255,0.06)}
+.oc-icon{font-size:2.5rem;margin-bottom:1rem}
+.oc-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.8rem;color:#c8f0d5}
+.oc-text{color:#7fb89a;font-size:0.9rem;line-height:1.6}
+.oc-stat{display:inline-block;background:rgba(46,204,113,0.1);color:var(--green-light);font-weight:700;font-size:0.85rem;padding:4px 12px;border-radius:20px;margin-top:0.8rem}
+
+/* GEOGRAPHY */
+#geography{background:#0a1e14}
+.geo-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:768px){.geo-layout{grid-template-columns:1fr}}
+.geo-map-container{position:relative}
+.south-america-svg{width:100%;max-width:400px;margin:0 auto;display:block;filter:drop-shadow(0 20px 60px rgba(46,204,113,0.2))}
+.geo-info{display:flex;flex-direction:column;gap:1.5rem}
+.geo-fact{background:rgba(255,255,255,0.04);border-left:3px solid var(--green);border-radius:0 12px 12px 0;padding:1.2rem 1.5rem}
+.geo-fact-title{font-weight:700;color:var(--green-light);font-size:0.9rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem}
+.geo-fact-text{color:#a8d5b5;font-size:0.95rem;line-height:1.6}
+
+/* RELIEF */
+#relief{background:linear-gradient(180deg,#0a1e14 0%,#0d1f17 100%)}
+.relief-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.relief-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;transition:all 0.3s}
+.relief-card:hover{transform:translateY(-4px);border-color:rgba(46,204,113,0.2)}
+.relief-card-header{padding:1.5rem 1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,0.05)}
+.relief-card-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;color:#c8f0d5}
+.relief-card-body{padding:1rem 1.5rem 1.5rem}
+.relief-card-body li{color:#7fb89a;font-size:0.9rem;line-height:1.7;padding-left:1rem;position:relative}
+.relief-card-body li::before{content:'▸';position:absolute;left:0;color:var(--green-light)}
+
+/* ELEVATION BAR */
+.elevation-bar-wrap{margin-top:2rem}
+.elev-row{display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem}
+.elev-label{min-width:140px;font-size:0.85rem;color:#a8d5b5;text-align:right}
+.elev-bar-bg{flex:1;height:10px;background:rgba(255,255,255,0.05);border-radius:5px;overflow:hidden}
+.elev-bar{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--green),var(--teal));transition:width 1s ease}
+.elev-val{min-width:80px;font-size:0.85rem;color:var(--green-light);font-weight:700}
+
+/* CLIMATE */
+#climate{background:#0a1e14}
+.climate-zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem}
+.climate-zone{border-radius:12px;padding:1.5rem;text-align:center;border:1px solid rgba(255,255,255,0.08);transition:all 0.3s}
+.climate-zone:hover{transform:scale(1.03)}
+.cz-icon{font-size:2rem;margin-bottom:0.8rem}
+.cz-name{font-weight:700;font-size:1rem;margin-bottom:0.5rem}
+.cz-desc{font-size:0.82rem;opacity:0.8;line-height:1.5}
+.cz-equatorial{background:rgba(231,76,60,0.1);border-color:rgba(231,76,60,0.2);color:#f1948a}
+.cz-subequatorial{background:rgba(230,126,34,0.1);border-color:rgba(230,126,34,0.2);color:#f0b27a}
+.cz-tropical{background:rgba(241,196,15,0.1);border-color:rgba(241,196,15,0.2);color:#f9e79f}
+.cz-subtropical{background:rgba(39,174,96,0.1);border-color:rgba(39,174,96,0.2);color:#a9dfbf}
+.cz-temperate{background:rgba(52,152,219,0.1);border-color:rgba(52,152,219,0.2);color:#a9cce3}
+
+/* HYDROGRAM */
+.hydro-section{margin-top:3rem}
+.hydro-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#c8f0d5}
+.hydro-chart{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media(max-width:600px){.hydro-chart{grid-template-columns:1fr}}
+.hydro-item{background:rgba(255,255,255,0.03);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,0.06)}
+.hydro-name{font-weight:700;color:var(--green-light);margin-bottom:1rem;font-size:1rem}
+.hydro-bars{display:flex;gap:3px;align-items:flex-end;height:80px}
+.hbar{flex:1;border-radius:3px 3px 0 0;min-height:4px;transition:height 0.5s ease}
+.months{display:flex;gap:3px;margin-top:5px}
+.month-label{flex:1;font-size:0.5rem;color:#7fb89a;text-align:center}
+
+/* RIVERS */
+#rivers{background:#0d1f17}
+.rivers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.river-card{background:rgba(52,152,219,0.06);border:1px solid rgba(52,152,219,0.15);border-radius:16px;padding:1.5rem;transition:all 0.3s}
+.river-card:hover{border-color:rgba(52,152,219,0.35);transform:translateY(-4px)}
+.river-card-emoji{font-size:2rem;margin-bottom:1rem}
+.river-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#aed6f1;margin-bottom:0.5rem}
+.river-stats{display:flex;flex-direction:column;gap:0.4rem;margin:1rem 0}
+.river-stat{display:flex;justify-content:space-between;font-size:0.85rem}
+.river-stat-key{color:#7fb89a}
+.river-stat-val{color:#aed6f1;font-weight:700}
+.river-desc{color:#7fb89a;font-size:0.88rem;line-height:1.6}
+
+/* NATURAL ZONES */
+#natural-zones{background:#0a1e14}
+.zones-accordion{display:flex;flex-direction:column;gap:0.8rem}
+.zone-item{border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;transition:all 0.3s}
+.zone-header{display:flex;align-items:center;padding:1.2rem 1.5rem;cursor:pointer;gap:1rem;transition:background 0.3s}
+.zone-header:hover{background:rgba(255,255,255,0.04)}
+.zone-icon{font-size:1.8rem;min-width:40px;text-align:center}
+.zone-title{font-weight:700;font-size:1rem;flex:1;color:#c8f0d5}
+.zone-toggle{color:var(--green-light);font-size:1.2rem;transition:transform 0.3s}
+.zone-body{padding:0 1.5rem;max-height:0;overflow:hidden;transition:all 0.4s ease}
+.zone-body.open{max-height:500px;padding:0 1.5rem 1.5rem}
+.zone-body-inner{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:500px){.zone-body-inner{grid-template-columns:1fr}}
+.zone-info-block{background:rgba(255,255,255,0.03);border-radius:8px;padding:1rem}
+.zone-info-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--green-light);font-weight:700;margin-bottom:0.5rem}
+.zone-info-text{color:#a8d5b5;font-size:0.88rem;line-height:1.6}
+
+/* COUNTRIES */
+#countries{background:#0d1f17}
+.countries-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem;justify-content:center}
+.country-tab{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:#7fb89a;padding:8px 18px;border-radius:25px;cursor:pointer;font-size:0.85rem;font-weight:600;transition:all 0.3s}
+.country-tab.active,.country-tab:hover{background:rgba(46,204,113,0.15);border-color:rgba(46,204,113,0.3);color:var(--green-light)}
+.country-panel{display:none;animation:fadeIn 0.4s ease}
+.country-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:768px){.country-panel.active{grid-template-columns:1fr}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.country-info{display:flex;flex-direction:column;gap:1rem}
+.country-flag-area{background:rgba(255,255,255,0.04);border-radius:16px;padding:2rem;text-align:center;border:1px solid rgba(255,255,255,0.07)}
+.country-flag{font-size:4rem;margin-bottom:1rem}
+.country-full-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c8f0d5}
+.country-nickname{color:var(--green-light);font-size:0.9rem;font-style:italic;margin-top:0.3rem}
+.country-details{display:flex;flex-direction:column;gap:0.6rem}
+.cd-row{display:flex;gap:0.8rem;padding:0.7rem;background:rgba(255,255,255,0.03);border-radius:8px}
+.cd-label{color:var(--green-light);font-size:0.8rem;font-weight:700;min-width:100px;text-transform:uppercase;letter-spacing:0.5px}
+.cd-value{color:#a8d5b5;font-size:0.9rem}
+.country-facts{background:rgba(255,255,255,0.03);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,0.06)}
+.cf-title{font-weight:700;color:var(--green-light);margin-bottom:1rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
+.cf-item{display:flex;gap:0.8rem;margin-bottom:0.7rem;align-items:flex-start}
+.cf-dot{color:var(--accent);margin-top:2px;flex-shrink:0}
+.cf-text{color:#7fb89a;font-size:0.88rem;line-height:1.5}
+
+/* POPULATION */
+#population{background:#0a1e14}
+.pop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:3rem}
+.pop-stat-card{background:rgba(255,255,255,0.04);border-radius:16px;padding:1.5rem;text-align:center;border:1px solid rgba(255,255,255,0.07)}
+.pop-stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:var(--accent);counter-reset:num attr(data-count)}
+.pop-stat-label{color:#7fb89a;font-size:0.85rem;margin-top:0.5rem;line-height:1.4}
+.pop-composition{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:600px){.pop-composition{grid-template-columns:1fr}}
+.pop-comp-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:1rem;color:#c8f0d5}
+.race-bar{margin-bottom:1rem}
+.race-label{display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:5px}
+.race-name{color:#a8d5b5}
+.race-pct{color:var(--green-light);font-weight:700}
+.race-progress{height:8px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden}
+.race-fill{height:100%;border-radius:4px;transition:width 1.5s ease}
+
+/* ECONOMY */
+#economy{background:#0d1f17}
+.economy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.econ-card{background:rgba(255,255,255,0.03);border-radius:16px;padding:1.5rem;border:1px solid rgba(255,255,255,0.07);transition:all 0.3s}
+.econ-card:hover{border-color:rgba(243,156,18,0.3);transform:translateY(-4px)}
+.econ-icon{font-size:2.5rem;margin-bottom:1rem}
+.econ-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#f9e79f;margin-bottom:0.7rem}
+.econ-items{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem}
+.econ-tag{background:rgba(243,156,18,0.1);border:1px solid rgba(243,156,18,0.2);color:#f9e79f;font-size:0.78rem;padding:3px 10px;border-radius:12px;font-weight:600}
+.econ-desc{color:#7fb89a;font-size:0.88rem;line-height:1.6}
+
+/* WILDLIFE */
+#wildlife{background:#0a1e14}
+.wildlife-slider{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.animal-card{background:rgba(255,255,255,0.03);border-radius:16px;padding:1.5rem;text-align:center;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;cursor:default}
+.animal-card:hover{transform:translateY(-6px) scale(1.03);border-color:rgba(46,204,113,0.3);background:rgba(46,204,113,0.06)}
+.animal-emoji{font-size:3rem;margin-bottom:0.8rem;display:block}
+.animal-name{font-weight:700;font-size:0.95rem;color:#c8f0d5;margin-bottom:0.3rem}
+.animal-zone{font-size:0.75rem;color:var(--green-light);background:rgba(46,204,113,0.1);padding:2px 10px;border-radius:10px;display:inline-block}
+
+/* FACTS */
+#facts{background:#0d1f17}
+.facts-masonry{columns:3 280px;gap:1.5rem}
+.fact-card{break-inside:avoid;background:rgba(255,255,255,0.03);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,0.07);transition:all 0.3s;position:relative;overflow:hidden}
+.fact-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--green),var(--teal))}
+.fact-card:hover{transform:translateX(4px);border-color:rgba(46,204,113,0.25)}
+.fact-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(46,204,113,0.15);position:absolute;top:0.5rem;right:1rem;line-height:1}
+.fact-text{color:#a8d5b5;font-size:0.92rem;line-height:1.7;padding-left:0.5rem}
+.fact-text strong{color:#c8f0d5;font-weight:700}
+
+/* QUIZ */
+#quiz{background:linear-gradient(180deg,#0a1e14 0%,#0d2a1e 100%);padding-bottom:100px}
+.quiz-container{max-width:800px;margin:0 auto}
+.quiz-progress-wrap{margin-bottom:2rem}
+.quiz-progress-text{display:flex;justify-content:space-between;font-size:0.85rem;color:#7fb89a;margin-bottom:0.5rem}
+.quiz-progress-bar{height:6px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden}
+.quiz-progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--teal));border-radius:3px;transition:width 0.5s ease}
+.quiz-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:2.5rem;min-height:300px;display:flex;flex-direction:column}
+.quiz-question-num{font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--green-light);font-weight:700;margin-bottom:1rem}
+.quiz-question{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#c8f0d5;margin-bottom:2rem;line-height:1.4;flex:1}
+.quiz-options{display:flex;flex-direction:column;gap:0.8rem}
+.quiz-option{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1rem 1.2rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:1rem;font-size:0.95rem;color:#a8d5b5;text-align:left}
+.quiz-option:hover:not(.answered){border-color:rgba(46,204,113,0.4);background:rgba(46,204,113,0.08);color:#c8f0d5}
+.quiz-option.correct{border-color:var(--green-light);background:rgba(46,204,113,0.15);color:#c8f0d5}
+.quiz-option.wrong{border-color:#e74c3c;background:rgba(231,76,60,0.1);color:#f1948a}
+.quiz-option.revealed{border-color:rgba(46,204,113,0.3);background:rgba(46,204,113,0.08)}
+.quiz-opt-letter{width:32px;height:32px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;flex-wrap:gap 1rem}
+.quiz-btn{padding:12px 28px;border-radius:30px;border:none;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.3s;letter-spacing:0.5px}
+.quiz-btn-next{background:linear-gradient(135deg,var(--green),var(--teal));color:#fff}
+.quiz-btn-next:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,204,113,0.3)}
+.quiz-btn-next:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+.quiz-score-display{display:none;text-align:center;padding:3rem 2rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px}
+.score-circle{width:150px;height:150px;border-radius:50%;border:6px solid var(--green-light);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 2rem;background:rgba(46,204,113,0.08)}
+.score-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--green-light)}
+.score-label{font-size:0.75rem;color:#7fb89a;text-transform:uppercase;letter-spacing:1px}
+.score-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c8f0d5;margin-bottom:0.5rem}
+.score-subtitle{color:#7fb89a;margin-bottom:2rem;font-size:1rem}
+.quiz-restart{background:linear-gradient(135deg,var(--green),var(--teal));color:#fff;border:none;padding:14px 40px;border-radius:30px;font-family:'Nunito',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:all 0.3s}
+.quiz-restart:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(46,204,113,0.35)}
+.score-answers{margin-top:2rem;text-align:left}
+.sa-item{display:flex;gap:1rem;padding:0.8rem;border-radius:10px;margin-bottom:0.6rem;font-size:0.88rem}
+.sa-correct{background:rgba(46,204,113,0.08);border:1px solid rgba(46,204,113,0.15)}
+.sa-wrong{background:rgba(231,76,60,0.06);border:1px solid rgba(231,76,60,0.15)}
+.sa-icon{flex-shrink:0;font-size:1rem}
+.sa-q{color:#a8d5b5;flex:1}
+.sa-a{font-weight:700}
+.sa-correct .sa-a{color:var(--green-light)}
+.sa-wrong .sa-a{color:#f1948a}
+
+/* FOOTER */
+footer{background:#061510;border-top:1px solid rgba(46,204,113,0.1);padding:3rem 2rem;text-align:center}
+.footer-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-light);margin-bottom:0.5rem}
+.footer-sub{color:#7fb89a;font-size:0.85rem}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav .nav-links{display:none}
+  .hydro-chart{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  section{padding:60px 1.2rem}
+  .facts-masonry{columns:1}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="nav-inner">
+  <a href="#hero" style="text-decoration:none"><div class="nav-logo">🌎 Южна Америка</div></a>
+  <div class="nav-links">
+    <a href="#overview">Обзор</a>
+    <a href="#geography">География</a>
+    <a href="#relief">Релеф</a>
+    <a href="#climate">Климат</a>
+    <a href="#rivers">Реки</a>
+    <a href="#natural-zones">Природни зони</a>
+    <a href="#countries">Държави</a>
+    <a href="#population">Население</a>
+    <a href="#economy">Икономика</a>
+    <a href="#wildlife">Флора/Фауна</a>
+    <a href="#facts">Факти</a>
+    <a href="#quiz">🎯 Тест</a>
+  </div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+<div class="hero-bg"></div>
+<div class="hero-particles" id="particles"></div>
+<div class="hero-content">
+  <div class="hero-badge">Образователен портал по география</div>
+  <h1 class="hero-title">
+    Южна<br><span>Америка</span>
+  </h1>
+  <p class="hero-subtitle">Открийте четвъртия по площ континент на Земята – земя на контрасти, джунгли, Анди и невероятно биоразнообразие</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">17.8M</div><div class="hero-stat-label">км² площ</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">442M</div><div class="hero-stat-label">Население</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Държави</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">6962m</div><div class="hero-stat-label">Акончагуа</div></div>
+  </div>
+  <a href="#overview" class="hero-cta">Открий континента ↓</a>
+</div>
+<div class="scroll-indicator">Scroll</div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Обща информация</div>
+    <h2 class="section-title">Южна Америка с един поглед</h2>
+    <p class="section-desc">Континентът е изцяло в Западното полукълбо – единственият такъв континент на Земята</p>
+  </div>
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="oc-icon">📍</div>
+      <div class="oc-title">Географско положение</div>
+      <div class="oc-text">Изцяло в Западното полукълбо. Пресича се от Екватора. Граничи с Атлантическия и Тихия океан.</div>
+      <span class="oc-stat">Западно полукълбо</span>
+    </div>
+    <div class="overview-card">
+      <div class="oc-icon">📐</div>
+      <div class="oc-title">Площ и размери</div>
+      <div class="oc-text">4-то място по площ сред континентите. Простира се от 12°с.ш. до 55°ю.ш. по географска ширина.</div>
+      <span class="oc-stat">17 840 000 км²</span>
+    </div>
+    <div class="overview-card">
+      <div class="oc-icon">🗺️</div>
+      <div class="oc-title">Брегова линия</div>
+      <div class="oc-text">Слабо разчленена брегова линия. Най-голям остров е Огнена земя. Архипелагът Галапагос е на 1000 км западно.</div>
+      <span class="oc-stat">Слабо разчленена</span>
+    </div>
+    <div class="overview-card">
+      <div class="oc-icon">🌿</div>
+      <div class="oc-title">Природни ресурси</div>
+      <div class="oc-text">Водещо място в света по производство на кафе, захарна тръстика, царевица, соя, банани и животновъдни продукти.</div>
+      <span class="oc-stat">Богата природа</span>
+    </div>
+    <div class="overview-card">
+      <div class="oc-icon">🏛️</div>
+      <div class="oc-title">Политическа карта</div>
+      <div class="oc-text">13 държави – 12 независими и 1 зависима (Френска Гвиана). Образуват съвременния облик след XIX век.</div>
+      <span class="oc-stat">13 държави</span>
+    </div>
+    <div class="overview-card">
+      <div class="oc-icon">🏺</div>
+      <div class="oc-title">История</div>
+      <div class="oc-text">Открита за европейците от Христофор Колумб (1492). Амерго Веспучи я описва. Маgellan пресича в 1519–1522 г.</div>
+      <span class="oc-stat">от 1492 г.</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- GEOGRAPHY -->
+<section id="geography">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Географско положение</div>
+    <h2 class="section-title">Положение и граници</h2>
+  </div>
+  <div class="geo-layout">
+    <div class="geo-map-container">
+      <svg class="south-america-svg" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a7a4a;stop-opacity:0.9"/>
+            <stop offset="100%" style="stop-color:#0e8a7d;stop-opacity:0.9"/>
+          </linearGradient>
+        </defs>
+        <!-- Simplified South America outline -->
+        <path d="M 80,20 L 140,10 L 200,25 L 230,50 L 240,80 L 235,120 L 250,160 L 260,200 L 255,240 L 240,280 L 220,320 L 200,360 L 170,400 L 140,440 L 110,470 L 90,480 L 70,460 L 60,430 L 65,400 L 80,370 L 75,340 L 60,310 L 50,270 L 55,230 L 45,190 L 40,150 L 50,110 L 60,70 Z" 
+              fill="url(#mapGrad)" stroke="rgba(46,204,113,0.5)" stroke-width="2" opacity="0.85"/>
+        <!-- Mountain range indicator -->
+        <path d="M 55,110 L 60,70 L 68,60" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+        <!-- Amazon river suggestion -->
+        <path d="M 80,180 Q 140,175 200,190" stroke="rgba(52,152,219,0.6)" stroke-width="2" fill="none"/>
+        <!-- Labels -->
+        <text x="120" y="160" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle" font-family="serif" font-weight="bold">БРАЗИЛИЯ</text>
+        <text x="85" y="300" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="serif">АРЖЕНТИНА</text>
+        <text x="75" y="180" font-size="8" fill="rgba(52,152,219,0.9)" text-anchor="middle">р. Амазонка</text>
+        <!-- Compass -->
+        <circle cx="260" cy="40" r="20" fill="rgba(0,0,0,0.3)" stroke="rgba(46,204,113,0.4)" stroke-width="1"/>
+        <text x="260" y="35" font-size="8" fill="rgba(255,255,255,0.8)" text-anchor="middle">N</text>
+        <text x="260" y="52" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">S</text>
+        <text x="248" y="44" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">W</text>
+        <text x="272" y="44" font-size="8" fill="rgba(255,255,255,0.8)" text-anchor="middle">E</text>
+      </svg>
+    </div>
+    <div class="geo-info">
+      <div class="geo-fact">
+        <div class="geo-fact-title">🧭 Крайни точки</div>
+        <div class="geo-fact-text">
+          <b>Север:</b> нос Галинас (12°27' с.ш.) – Колумбия<br>
+          <b>Юг:</b> нос Хорн (55°59' ю.ш.) – Чили<br>
+          <b>Запад:</b> нос Париняс (81°19' з.д.) – Перу<br>
+          <b>Изток:</b> нос Кабу Бранку (34°47' з.д.) – Бразилия
+        </div>
+      </div>
+      <div class="geo-fact">
+        <div class="geo-fact-title">🌊 Граничещи океани</div>
+        <div class="geo-fact-text">На <b>изток</b> – Атлантически океан. На <b>запад</b> – Тихи океан. На <b>север</b> – Карибско море. На <b>юг</b> – протокът Дрейк (1100 km) отделя от Антарктида.</div>
+      </div>
+      <div class="geo-fact">
+        <div class="geo-fact-title">🌐 Климатичен пояс</div>
+        <div class="geo-fact-text">Континентът попада главно в горещия топлинен пояс. По-голямата му част е в Южното полукълбо. Пресича се от Екватора и Южната тропична окръжност.</div>
+      </div>
+      <div class="geo-fact">
+        <div class="geo-fact-title">🔗 Връзка с Северна Америка</div>
+        <div class="geo-fact-text">Свързана е чрез тесния Панамски провлак. Панамският канал (82 km дължина, открит 1914 г.) позволява корабоплаване между двата океана.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- RELIEF -->
+<section id="relief">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Релеф</div>
+    <h2 class="section-title">Релеф и полезни изкопаеми</h2>
+    <p class="section-desc">Три ясно изразени части: западна (висока), средна (низинна) и източна (нископланинска и платовидна)</p>
+  </div>
+  <div class="relief-grid">
+    <div class="relief-card">
+      <div class="relief-card-header">
+        <div class="relief-card-title">🏔️ Западна Анди</div>
+        <div class="oc-stat" style="margin-top:0.5rem">9000 km дължина</div>
+      </div>
+      <div class="relief-card-body">
+        <ul>
+          <li>Най-дългите планини на Земята – Андите</li>
+          <li>Най-висок връх: <b>Акончагуа – 6962 м</b></li>
+          <li>Много действащи вулкани (Котопахи – 5897 м)</li>
+          <li>Чести земетресения</li>
+          <li>Котловини, плата и речни долини</li>
+          <li>Езерото Титикака – най-високо плавателно езеро (3812 м)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="relief-card">
+      <div class="relief-card-header">
+        <div class="relief-card-title">🌊 Средна низинна зона</div>
+        <div class="oc-stat" style="margin-top:0.5rem">Амазония</div>
+      </div>
+      <div class="relief-card-body">
+        <ul>
+          <li><b>Амазонска низина</b> – над 5 млн. км², средна н.в. 100 м</li>
+          <li><b>Ориноко</b> – на север от Амазония</li>
+          <li><b>Лаплатска низина</b> – на юг, преминава в Патагония</li>
+          <li>Гъсти тропични гори</li>
+          <li>Рядко населена</li>
+        </ul>
+      </div>
+    </div>
+    <div class="relief-card">
+      <div class="relief-card-header">
+        <div class="relief-card-title">🪨 Източна планинска земя</div>
+        <div class="oc-stat" style="margin-top:0.5rem">Стари планини</div>
+      </div>
+      <div class="relief-card-body">
+        <ul>
+          <li>Бразилска и Гвианска планинска земя</li>
+          <li>Едни от <b>най-старите планини</b> на Земята</li>
+          <li>Силно заравнени, нископланински</li>
+          <li>Върховете заоблени поради ерозия</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="elevation-bar-wrap">
+    <h3 style="font-family:'Playfair Display',serif;margin-bottom:1.5rem;color:#c8f0d5">📊 Сравнение на максимални върхове (в метри)</h3>
+    <div class="elev-row"><div class="elev-label">Акончагуа (Аргентина)</div><div class="elev-bar-bg"><div class="elev-bar" style="width:100%" data-w="100"></div></div><div class="elev-val">6 962 м</div></div>
+    <div class="elev-row"><div class="elev-label">Уайна Потоси (Боливия)</div><div class="elev-bar-bg"><div class="elev-bar" style="width:87%" data-w="87"></div></div><div class="elev-val">6 088 м</div></div>
+    <div class="elev-row"><div class="elev-label">Котопахи (Еквадор)</div><div class="elev-bar-bg"><div class="elev-bar" style="width:85%" data-w="85"></div></div><div class="elev-val">5 897 м</div></div>
+    <div class="elev-row"><div class="elev-label">Денали (Сев. Америка)</div><div class="elev-bar-bg"><div class="elev-bar" style="width:88%" data-w="88" style="background:linear-gradient(90deg,#555,#777)"></div></div><div class="elev-val">6 198 м</div></div>
+    <div class="elev-row"><div class="elev-label">Mont Blanc (Европа)</div><div class="elev-bar-bg"><div class="elev-bar" style="width:61%;background:linear-gradient(90deg,#4a90d9,#5ba3e8)" data-w="61"></div></div><div class="elev-val">4 808 м</div></div>
+  </div>
+</div>
+</section>
+
+<!-- CLIMATE -->
+<section id="climate">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Климат</div>
+    <h2 class="section-title">Климатични пояси</h2>
+    <p class="section-desc">На континента Южна Америка се срещат всички видове климат с изключение на полярния и субполярния</p>
+  </div>
+  <div class="climate-zones">
+    <div class="climate-zone cz-equatorial">
+      <div class="cz-icon">🌴</div>
+      <div class="cz-name">Екваториален</div>
+      <div class="cz-desc">Топло и влажно целогодишно. Валежи ~2001 мм. T° ~26.7°C (Манаус). Един сезон – лято.</div>
+    </div>
+    <div class="climate-zone cz-subequatorial">
+      <div class="cz-icon">☀️</div>
+      <div class="cz-name">Субекваториален</div>
+      <div class="cz-desc">Два сезона: влажно лято и суха зима. Превладаващи ветрове: пасати.</div>
+    </div>
+    <div class="climate-zone cz-tropical">
+      <div class="cz-icon">🌵</div>
+      <div class="cz-name">Тропичен</div>
+      <div class="cz-desc">Включва сухата Атакама – най-сухото място на Земята! Два вида климат.</div>
+    </div>
+    <div class="climate-zone cz-subtropical">
+      <div class="cz-icon">🌾</div>
+      <div class="cz-name">Субтропичен</div>
+      <div class="cz-desc">30–40° ю.ш. Четири сезона – горещо лято и мека зима. Буенос Айрес (18°C ср.г.)</div>
+    </div>
+    <div class="climate-zone cz-temperate">
+      <div class="cz-icon">❄️</div>
+      <div class="cz-name">Умерен</div>
+      <div class="cz-desc">Южно от 40° ю.ш. Ср. год. t° около 6–8°C. Патагония е умерено-континентален.</div>
+    </div>
+  </div>
+  
+  <!-- Hydrograms -->
+  <div class="hydro-section">
+    <div class="hydro-title">💧 Хидрограми на основните реки</div>
+    <div class="hydro-chart">
+      <div class="hydro-item">
+        <div class="hydro-name">р. Амазонка (Манаус)</div>
+        <div class="hydro-bars" id="amazon-bars">
+          <!-- bars will be generated by JS -->
+        </div>
+        <div class="months"><span class="month-label">Я</span><span class="month-label">Ф</span><span class="month-label">М</span><span class="month-label">А</span><span class="month-label">М</span><span class="month-label">Ю</span><span class="month-label">Ю</span><span class="month-label">А</span><span class="month-label">С</span><span class="month-label">О</span><span class="month-label">Н</span><span class="month-label">Д</span></div>
+        <div style="font-size:0.78rem;color:#7fb89a;margin-top:8px">Макс. пълноводие: март–май | Мин. водност: авг.–окт.</div>
+      </div>
+      <div class="hydro-item">
+        <div class="hydro-name">р. Парана</div>
+        <div class="hydro-bars" id="parana-bars"></div>
+        <div class="months"><span class="month-label">Я</span><span class="month-label">Ф</span><span class="month-label">М</span><span class="month-label">А</span><span class="month-label">М</span><span class="month-label">Ю</span><span class="month-label">Ю</span><span class="month-label">А</span><span class="month-label">С</span><span class="month-label">О</span><span class="month-label">Н</span><span class="month-label">Д</span></div>
+        <div style="font-size:0.78rem;color:#7fb89a;margin-top:8px">Пълноводие: януари–май | Маловодие: юли–октомври</div>
+      </div>
+      <div class="hydro-item">
+        <div class="hydro-name">р. Ориноко</div>
+        <div class="hydro-bars" id="orinoco-bars"></div>
+        <div class="months"><span class="month-label">Я</span><span class="month-label">Ф</span><span class="month-label">М</span><span class="month-label">А</span><span class="month-label">М</span><span class="month-label">Ю</span><span class="month-label">Ю</span><span class="month-label">А</span><span class="month-label">С</span><span class="month-label">О</span><span class="month-label">Н</span><span class="month-label">Д</span></div>
+        <div style="font-size:0.78rem;color:#7fb89a;margin-top:8px">Пълноводие: юли–август | Маловодие: март</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- RIVERS -->
+<section id="rivers">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Хидрография</div>
+    <h2 class="section-title">Реки и водни обекти</h2>
+    <p class="section-desc">Южна Америка е на второ място в света по водно богатство след Азия</p>
+  </div>
+  <div class="rivers-grid">
+    <div class="river-card">
+      <div class="river-card-emoji">🌊</div>
+      <div class="river-name">р. Амазонка</div>
+      <div class="river-stats">
+        <div class="river-stat"><span class="river-stat-key">Дължина:</span><span class="river-stat-val">7 025 km</span></div>
+        <div class="river-stat"><span class="river-stat-key">Водосборен басейн:</span><span class="river-stat-val">7 млн. км²</span></div>
+        <div class="river-stat"><span class="river-stat-key">Влива се в:</span><span class="river-stat-val">Атлантически океан</span></div>
+        <div class="river-stat"><span class="river-stat-key">Начало:</span><span class="river-stat-val">Перуански Анди</span></div>
+      </div>
+      <div class="river-desc">Най-пълноводната, най-дългата и с най-голям водосборен басейн река на Земята. 1/5 от прясната вода на планетата. В устието – най-голямият наносен остров Маражо.</div>
+    </div>
+    <div class="river-card">
+      <div class="river-card-emoji">💧</div>
+      <div class="river-name">р. Парана</div>
+      <div class="river-stats">
+        <div class="river-stat"><span class="river-stat-key">Дължина:</span><span class="river-stat-val">4 880 km</span></div>
+        <div class="river-stat"><span class="river-stat-key">Значение:</span><span class="river-stat-val">2-ра по площ на водосб.</span></div>
+        <div class="river-stat"><span class="river-stat-key">Влива се в:</span><span class="river-stat-val">Атлантически океан</span></div>
+      </div>
+      <div class="river-desc">Втора по дължина и водосборна площ. Образува Рио де ла Плата (Сребърна река) преди устието. На нея е построен ВЕЦ „Итайпу" – 2-ри по мощност в света!</div>
+    </div>
+    <div class="river-card">
+      <div class="river-card-emoji">🏞️</div>
+      <div class="river-name">р. Ориноко</div>
+      <div class="river-stats">
+        <div class="river-stat"><span class="river-stat-key">Дължина:</span><span class="river-stat-val">2 140 km</span></div>
+        <div class="river-stat"><span class="river-stat-key">Извор:</span><span class="river-stat-val">Гвианска планинска земя</span></div>
+        <div class="river-stat"><span class="river-stat-key">Влива се в:</span><span class="river-stat-val">Атлантически океан</span></div>
+      </div>
+      <div class="river-desc">Трета по дължина. Приток на Чурун съдържа водопада Анхел (Ангел) – 1054 м – <b>най-висок водопад в света!</b></div>
+    </div>
+    <div class="river-card">
+      <div class="river-card-emoji">🌈</div>
+      <div class="river-name">Водопад Игуасу</div>
+      <div class="river-stats">
+        <div class="river-stat"><span class="river-stat-key">Брой водопади:</span><span class="river-stat-val">275</span></div>
+        <div class="river-stat"><span class="river-stat-key">Ширина:</span><span class="river-stat-val">~2 700 m</span></div>
+        <div class="river-stat"><span class="river-stat-key">Граница:</span><span class="river-stat-val">Аргентина-Бразилия</span></div>
+      </div>
+      <div class="river-desc">Каскадата Игуасу от 275 водопада на р. Парана (приток). На 1 сек. изтичат 7100 м³ вода. Туристически обект с над 700 000 посетители годишно.</div>
+    </div>
+    <div class="river-card">
+      <div class="river-card-emoji">🏔️</div>
+      <div class="river-name">Езеро Титикака</div>
+      <div class="river-stats">
+        <div class="river-stat"><span class="river-stat-key">Н.В.:</span><span class="river-stat-val">3 812 m</span></div>
+        <div class="river-stat"><span class="river-stat-key">Граница:</span><span class="river-stat-val">Перу и Боливия</span></div>
+        <div class="river-stat"><span class="river-stat-key">Значение:</span><span class="river-stat-val">Най-голямо планинско езеро</span></div>
+      </div>
+      <div class="river-desc">Най-високо разположеното плавателно езеро в света. От дъното му се добива нефт. На бреговете живеят местни жители на изкуствени острови от тотора тръстика.</div>
+    </div>
+    <div class="river-card">
+      <div class="river-card-emoji">⚡</div>
+      <div class="river-name">ВЕЦ Итайпу</div>
+      <div class="river-stats">
+        <div class="river-stat"><span class="river-stat-key">Мощност:</span><span class="river-stat-val">2-ри в света</span></div>
+        <div class="river-stat"><span class="river-stat-key">Дял в Бразилия:</span><span class="river-stat-val">85% ел. енергия</span></div>
+        <div class="river-stat"><span class="river-stat-key">Признание:</span><span class="river-stat-val">7 съвр. чудеса</span></div>
+      </div>
+      <div class="river-desc">Обявен за едно от 7-те съвременни чудеса на света от Американското дружество на строителните инженери (1994 г.).</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- NATURAL ZONES -->
+<section id="natural-zones">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Природни зони</div>
+    <h2 class="section-title">Природни зони на Южна Америка</h2>
+    <p class="section-desc">2/3 от територията се заемат от екваториалните гори и саваните. Зоните се сменят от север на юг и от ниско към високо.</p>
+  </div>
+  <div class="zones-accordion">
+    <div class="zone-item">
+      <div class="zone-header" onclick="toggleZone(this)">
+        <div class="zone-icon">🌳</div>
+        <div class="zone-title">Влажни екваториални гори – Селвас</div>
+        <div class="zone-toggle">▾</div>
+      </div>
+      <div class="zone-body">
+        <div class="zone-body-inner">
+          <div class="zone-info-block">
+            <div class="zone-info-label">Растителност</div>
+            <div class="zone-info-text">Над 4000 древесни вида! Хевея, балса, каучуково дърво, пау бразил, палми, лиани, орхидеи. Дървета до 90 м.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Животни</div>
+            <div class="zone-info-text">Пума, ягуар, тапир, ленивец, делфини, пирани, анаконда, кайман, папагали, тукан, колибри.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Климат</div>
+            <div class="zone-info-text">Топъл и влажен целогодишно. Валежи над 2000 мм. Един сезон.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Значение</div>
+            <div class="zone-info-text">"Белите дробове" на планетата. Застрашени от дърводобив и изсичане за земеделски цели.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zone-item">
+      <div class="zone-header" onclick="toggleZone(this)">
+        <div class="zone-icon">🌿</div>
+        <div class="zone-title">Савани – Льяноси и Кампоси</div>
+        <div class="zone-toggle">▾</div>
+      </div>
+      <div class="zone-body">
+        <div class="zone-body-inner">
+          <div class="zone-info-block">
+            <div class="zone-info-label">Растителност</div>
+            <div class="zone-info-text">Бутилково дърво, бора, аруакария, дърво мате, дъб кебрачо, палми, столетници, кактуси.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Животни</div>
+            <div class="zone-info-text">Тапир, броненосец, свиня пекари, папагали, змии, гривест вълк, нанду.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Климат</div>
+            <div class="zone-info-text">По-малко валежи, изразен сух период. Льяносите на север – влажни; на юг Кампос.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Стопанство</div>
+            <div class="zone-info-text">Благоприятни условия за живот и стопанска дейност. Развива се говедовъдство.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zone-item">
+      <div class="zone-header" onclick="toggleZone(this)">
+        <div class="zone-icon">🌾</div>
+        <div class="zone-title">Степи – Пампата</div>
+        <div class="zone-toggle">▾</div>
+      </div>
+      <div class="zone-body">
+        <div class="zone-body-inner">
+          <div class="zone-info-block">
+            <div class="zone-info-label">Местоположение</div>
+            <div class="zone-info-text">Между Андите и Атлантическото крайбрежие, 30–40° ю.ш. Аржентина.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Значение</div>
+            <div class="zone-info-text">Едни от най-добрите зърнопроизводствени райони в света! Черноземи и чернозем-подобни почви.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Животни</div>
+            <div class="zone-info-text">Гризачи, зебу, гуанако, нанду. Гаучосите – аржентинските животновъди.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Стопанство</div>
+            <div class="zone-info-text">Развито говедовъдство и овцевъдство. Зърнени култури – пшеница, царевица, соя.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zone-item">
+      <div class="zone-header" onclick="toggleZone(this)">
+        <div class="zone-icon">🏜️</div>
+        <div class="zone-title">Пустини – Атакама и Патагония</div>
+        <div class="zone-toggle">▾</div>
+      </div>
+      <div class="zone-body">
+        <div class="zone-body-inner">
+          <div class="zone-info-block">
+            <div class="zone-info-label">Атакама</div>
+            <div class="zone-info-text">Най-сухото място на Земята. Валежи 1.5 мм/г. Хълмист релеф с каменисти и пясъчни простр. Залежи от селитра.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Патагония</div>
+            <div class="zone-info-text">Хълмиста равнина, разчленено плато. Сухолюбиви треви. Лама, броненосец, нанду, гуанако. Залежи на нефт.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zone-item">
+      <div class="zone-header" onclick="toggleZone(this)">
+        <div class="zone-icon">🦅</div>
+        <div class="zone-title">Планинска климатична зона – Андите</div>
+        <div class="zone-toggle">▾</div>
+      </div>
+      <div class="zone-body">
+        <div class="zone-body-inner">
+          <div class="zone-info-block">
+            <div class="zone-info-label">Растителност</div>
+            <div class="zone-info-text">Хининово дърво, корково дърво, дървото кока. По надморска височина се сменят всички природни зони.</div>
+          </div>
+          <div class="zone-info-block">
+            <div class="zone-info-label">Животни</div>
+            <div class="zone-info-text">Лама, очилата мечка, кондор – един от най-едрите летящи птици на Земята!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- COUNTRIES -->
+<section id="countries">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Държави</div>
+    <h2 class="section-title">Страни в Южна Америка</h2>
+    <p class="section-desc">13 страни – 12 независими и 1 зависима (Френска Гвиана)</p>
+  </div>
+  <div class="countries-tabs">
+    <div class="country-tab active" onclick="showCountry('brazil', this)">🇧🇷 Бразилия</div>
+    <div class="country-tab" onclick="showCountry('argentina', this)">🇦🇷 Аржентина</div>
+    <div class="country-tab" onclick="showCountry('peru', this)">🇵🇪 Перу</div>
+    <div class="country-tab" onclick="showCountry('colombia', this)">🇨🇴 Колумбия</div>
+    <div class="country-tab" onclick="showCountry('chile', this)">🇨🇱 Чили</div>
+    <div class="country-tab" onclick="showCountry('venezuela', this)">🇻🇪 Венецуела</div>
+  </div>
+
+  <!-- Brazil -->
+  <div id="panel-brazil" class="country-panel active">
+    <div class="country-info">
+      <div class="country-flag-area">
+        <div class="country-flag">🇧🇷</div>
+        <div class="country-full-name">Федерална Република Бразилия</div>
+        <div class="country-nickname">"Земята на кафето и карнавала"</div>
+      </div>
+      <div class="country-details">
+        <div class="cd-row"><span class="cd-label">Площ</span><span class="cd-value">8 515 000 км² (5-то в света)</span></div>
+        <div class="cd-row"><span class="cd-label">Население</span><span class="cd-value">~217 млн. д. (5-то в света)</span></div>
+        <div class="cd-row"><span class="cd-label">Столица</span><span class="cd-value">Бразилия (2.5 млн. д.)</span></div>
+        <div class="cd-row"><span class="cd-label">Ез. / Рел.</span><span class="cd-value">Португалски / Католицизъм</span></div>
+        <div class="cd-row"><span class="cd-label">Гъстота</span><span class="cd-value">~25 д/км²</span></div>
+        <div class="cd-row"><span class="cd-label">Икономика</span><span class="cd-value">1-ва в ЮА, топ-10 в света</span></div>
+      </div>
+    </div>
+    <div class="country-facts">
+      <div class="cf-title">Интересни факти</div>
+      <div class="cf-item"><span class="cf-dot">🌿</span><span class="cf-text"><b>#1 в света</b> по производство на кафе и захарна тръстика</span></div>
+      <div class="cf-item"><span class="cf-dot">⚡</span><span class="cf-text">ВЕЦ произвеждат <b>85% от ел.енергия</b>. ВЕЦ Итайпу – 2-ри в света по мощност</span></div>
+      <div class="cf-item"><span class="cf-dot">🏙️</span><span class="cf-text">Сао Пауло – над 20 млн. жители, <b>най-голям град в ЮА</b></span></div>
+      <div class="cf-item"><span class="cf-dot">🌊</span><span class="cf-text">Пристанището на Сао Пауло – <b>най-голямо в Южна Америка</b></span></div>
+      <div class="cf-item"><span class="cf-dot">⛪</span><span class="cf-text">Статуята на Христос Спасителя на хълма Коркоба – символ на Рио де Жанейро</span></div>
+      <div class="cf-item"><span class="cf-dot">🎭</span><span class="cf-text"><b>Карнавалът в Рио</b> е световно известен – милиони посетители годишно</span></div>
+      <div class="cf-item"><span class="cf-dot">⚽</span><span class="cf-text">Стадион Маракана – рекорд от 200 000 посетители на мач (1950 г.)</span></div>
+      <div class="cf-item"><span class="cf-dot">✈️</span><span class="cf-text">Embraer – бразилски производител на <b>самолети</b> с международно признание</span></div>
+    </div>
+  </div>
+
+  <!-- Argentina -->
+  <div id="panel-argentina" class="country-panel">
+    <div class="country-info">
+      <div class="country-flag-area">
+        <div class="country-flag">🇦🇷</div>
+        <div class="country-full-name">Република Аржентина</div>
+        <div class="country-nickname">"Страната на среброто"</div>
+      </div>
+      <div class="country-details">
+        <div class="cd-row"><span class="cd-label">Площ</span><span class="cd-value">2 767 000 км² (2-ра в ЮА)</span></div>
+        <div class="cd-row"><span class="cd-label">Население</span><span class="cd-value">~46 млн. д.</span></div>
+        <div class="cd-row"><span class="cd-label">Столица</span><span class="cd-value">Буенос Айрес (13+ млн. д.)</span></div>
+        <div class="cd-row"><span class="cd-label">Език / Рел.</span><span class="cd-value">Испански / Християнство</span></div>
+        <div class="cd-row"><span class="cd-label">Гъстота</span><span class="cd-value">16–17 д/км²</span></div>
+        <div class="cd-row"><span class="cd-label">Ресурси</span><span class="cd-value">Литий (3-то в света), нефт, газ</span></div>
+      </div>
+    </div>
+    <div class="country-facts">
+      <div class="cf-title">Интересни факти</div>
+      <div class="cf-item"><span class="cf-dot">🥈</span><span class="cf-text">Названието идва от латинското <b>argentum = сребро</b>. Символ №47 в периодичната таблица!</span></div>
+      <div class="cf-item"><span class="cf-dot">🏔️</span><span class="cf-text"><b>Акончагуа (6962 м)</b> – най-висок връх на Южна Америка и на Западното полукълбо</span></div>
+      <div class="cf-item"><span class="cf-dot">💃</span><span class="cf-text">Аржентина е <b>родина на тангото</b></span></div>
+      <div class="cf-item"><span class="cf-dot">🛣️</span><span class="cf-text">Булевард „9 юли" – <b>най-широката улица в света</b> (110 м)</span></div>
+      <div class="cf-item"><span class="cf-dot">🏙️</span><span class="cf-text">Буенос Айрес – „Парижът на Южна Америка". Около 50% от населението живее в столицата</span></div>
+      <div class="cf-item"><span class="cf-dot">⚽</span><span class="cf-text">Отборът се казва <b>„Гаучосите"</b> – по аржентинските животновъди</span></div>
+      <div class="cf-item"><span class="cf-dot">🌾</span><span class="cf-text">Икономиката е силно развита – земеделие в <b>Пампата</b>, металургия, химия</span></div>
+    </div>
+  </div>
+
+  <!-- Peru -->
+  <div id="panel-peru" class="country-panel">
+    <div class="country-info">
+      <div class="country-flag-area">
+        <div class="country-flag">🇵🇪</div>
+        <div class="country-full-name">Република Перу</div>
+        <div class="country-nickname">"Земята на инките"</div>
+      </div>
+      <div class="country-details">
+        <div class="cd-row"><span class="cd-label">Площ</span><span class="cd-value">1 285 000 км² (3-та в ЮА)</span></div>
+        <div class="cd-row"><span class="cd-label">Столица</span><span class="cd-value">Лима</span></div>
+        <div class="cd-row"><span class="cd-label">Език</span><span class="cd-value">Испански, кечуа, аймара</span></div>
+      </div>
+    </div>
+    <div class="country-facts">
+      <div class="cf-title">Интересни факти</div>
+      <div class="cf-item"><span class="cf-dot">🏛️</span><span class="cf-text"><b>Империята на инките</b> – в началото на XVI в. е най-голямата в Южна Америка. Столица Куско.</span></div>
+      <div class="cf-item"><span class="cf-dot">🗿</span><span class="cf-text"><b>Мачу Пикчу</b> – легендарният инкски град в Андите, туристическа забележителност</span></div>
+      <div class="cf-item"><span class="cf-dot">🌊</span><span class="cf-text">Перуанското (студено) течение влияе силно на климата – причина за пустинята Атакама</span></div>
+      <div class="cf-item"><span class="cf-dot">🏔️</span><span class="cf-text">Езерото Титикака (3812 м) – граница с Боливия</span></div>
+    </div>
+  </div>
+
+  <!-- Colombia -->
+  <div id="panel-colombia" class="country-panel">
+    <div class="country-info">
+      <div class="country-flag-area">
+        <div class="country-flag">🇨🇴</div>
+        <div class="country-full-name">Република Колумбия</div>
+        <div class="country-nickname">"Врата на Южна Америка"</div>
+      </div>
+      <div class="country-details">
+        <div class="cd-row"><span class="cd-label">Площ</span><span class="cd-value">1 139 000 км²</span></div>
+        <div class="cd-row"><span class="cd-label">Столица</span><span class="cd-value">Богота</span></div>
+        <div class="cd-row"><span class="cd-label">Особеност</span><span class="cd-value">Излаз на 2 океана</span></div>
+      </div>
+    </div>
+    <div class="country-facts">
+      <div class="cf-title">Интересни факти</div>
+      <div class="cf-item"><span class="cf-dot">🌊</span><span class="cf-text">Единствената страна в ЮА с <b>излаз на Тихия и Атлантическия океан</b></span></div>
+      <div class="cf-item"><span class="cf-dot">☕</span><span class="cf-text">Световно известна с <b>качеството на кафето</b> си</span></div>
+      <div class="cf-item"><span class="cf-dot">💎</span><span class="cf-text">Водещ производител на <b>изумруди</b> в света</span></div>
+    </div>
+  </div>
+
+  <!-- Chile -->
+  <div id="panel-chile" class="country-panel">
+    <div class="country-info">
+      <div class="country-flag-area">
+        <div class="country-flag">🇨🇱</div>
+        <div class="country-full-name">Република Чили</div>
+        <div class="country-nickname">"Най-тясната страна"</div>
+      </div>
+      <div class="country-details">
+        <div class="cd-row"><span class="cd-label">Площ</span><span class="cd-value">757 000 км²</span></div>
+        <div class="cd-row"><span class="cd-label">Дължина</span><span class="cd-value">~4 300 km</span></div>
+        <div class="cd-row"><span class="cd-label">Столица</span><span class="cd-value">Сантяго</span></div>
+      </div>
+    </div>
+    <div class="country-facts">
+      <div class="cf-title">Интересни факти</div>
+      <div class="cf-item"><span class="cf-dot">🗺️</span><span class="cf-text">Чили е <b>найтясната и найдългата страна</b> в света – 4300 km дължина при само ~180 km ширина</span></div>
+      <div class="cf-item"><span class="cf-dot">🏜️</span><span class="cf-text">Пустинята <b>Атакама</b> – <b>най-сухото място на Земята</b> (1.5 мм/год.)</span></div>
+      <div class="cf-item"><span class="cf-dot">🍷</span><span class="cf-text">Световноизвестни <b>вина</b> и производство на мед</span></div>
+    </div>
+  </div>
+
+  <!-- Venezuela -->
+  <div id="panel-venezuela" class="country-panel">
+    <div class="country-info">
+      <div class="country-flag-area">
+        <div class="country-flag">🇻🇪</div>
+        <div class="country-full-name">Република Венецуела</div>
+        <div class="country-nickname">"Земята на водопадите"</div>
+      </div>
+      <div class="country-details">
+        <div class="cd-row"><span class="cd-label">Площ</span><span class="cd-value">912 000 км²</span></div>
+        <div class="cd-row"><span class="cd-label">Столица</span><span class="cd-value">Каракас</span></div>
+        <div class="cd-row"><span class="cd-label">Ресурси</span><span class="cd-value">Нефт, газ, злато</span></div>
+      </div>
+    </div>
+    <div class="country-facts">
+      <div class="cf-title">Интересни факти</div>
+      <div class="cf-item"><span class="cf-dot">🌊</span><span class="cf-text"><b>Водопад Анхел (1054 м)</b> – най-висок водопад на Земята! На приток на р. Ориноко</span></div>
+      <div class="cf-item"><span class="cf-dot">⛽</span><span class="cf-text">Едни от <b>най-големите нефтени запаси</b> в света</span></div>
+      <div class="cf-item"><span class="cf-dot">🌊</span><span class="cf-text">Венецуелският залив – добре оформен залив на Карибско море</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- POPULATION -->
+<section id="population">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Население</div>
+    <h2 class="section-title">Население на Южна Америка</h2>
+    <p class="section-desc">442 млн. души (2022 г.) – 5-то място сред континентите</p>
+  </div>
+  <div class="pop-grid">
+    <div class="pop-stat-card"><div class="pop-stat-num">442M</div><div class="pop-stat-label">Общо население (2022)</div></div>
+    <div class="pop-stat-card"><div class="pop-stat-num">24.6</div><div class="pop-stat-label">д/км² средна гъстота</div></div>
+    <div class="pop-stat-card"><div class="pop-stat-num">85%+</div><div class="pop-stat-label">Живеят в градове (Бразилия)</div></div>
+    <div class="pop-stat-card"><div class="pop-stat-num">13</div><div class="pop-stat-label">Независими държави</div></div>
+  </div>
+  <div class="pop-composition">
+    <div>
+      <div class="pop-comp-title">Расов и етнически състав</div>
+      <div class="race-bar">
+        <div class="race-label"><span class="race-name">Европеидна раса (потомци)</span><span class="race-pct">~42%</span></div>
+        <div class="race-progress"><div class="race-fill" style="width:42%;background:linear-gradient(90deg,var(--blue-light),var(--teal))"></div></div>
+      </div>
+      <div class="race-bar">
+        <div class="race-label"><span class="race-name">Метиси (европейци + индианци)</span><span class="race-pct">~32%</span></div>
+        <div class="race-progress"><div class="race-fill" style="width:32%;background:linear-gradient(90deg,var(--green),#5dade2)"></div></div>
+      </div>
+      <div class="race-bar">
+        <div class="race-label"><span class="race-name">Мулати (европейци + африканци)</span><span class="race-pct">~14%</span></div>
+        <div class="race-progress"><div class="race-fill" style="width:14%;background:linear-gradient(90deg,var(--earth),#e67e22)"></div></div>
+      </div>
+      <div class="race-bar">
+        <div class="race-label"><span class="race-name">Негроидно-австралоидна раса</span><span class="race-pct">~8%</span></div>
+        <div class="race-progress"><div class="race-fill" style="width:8%;background:linear-gradient(90deg,#8e44ad,#9b59b6)"></div></div>
+      </div>
+      <div class="race-bar">
+        <div class="race-label"><span class="race-name">Индиански племена</span><span class="race-pct">~4%</span></div>
+        <div class="race-progress"><div class="race-fill" style="width:4%;background:linear-gradient(90deg,var(--accent),#f39c12)"></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="pop-comp-title">Разпределение на населението</div>
+      <div class="geo-fact" style="margin-bottom:1rem">
+        <div class="geo-fact-title">🟢 Гъсто населени райони</div>
+        <div class="geo-fact-text">Атлантическото крайбрежие (особено Бразилия) • Долините на Андите • Устията на реките • Пампата (Аржентина)</div>
+      </div>
+      <div class="geo-fact">
+        <div class="geo-fact-title">🔴 Слабо населени райони</div>
+        <div class="geo-fact-text">Амазонска низина – гориста, горещо-влажна • Атакама – пустинна • Патагония – студена и суха • Вътрешните планини</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ECONOMY -->
+<section id="economy">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Стопанство</div>
+    <h2 class="section-title">Икономика на Южна Америка</h2>
+    <p class="section-desc">Водещо място в света по производство на редица суровини и земеделски продукти</p>
+  </div>
+  <div class="economy-grid">
+    <div class="econ-card">
+      <div class="econ-icon">🌱</div>
+      <div class="econ-title">Земеделие</div>
+      <div class="econ-desc">Развива се предимно на огромни плантации. Водещо производство в света по редица продукти.</div>
+      <div class="econ-items">
+        <span class="econ-tag">☕ Кафе #1</span>
+        <span class="econ-tag">🍬 Захарна тръстика</span>
+        <span class="econ-tag">🌽 Царевица</span>
+        <span class="econ-tag">🍌 Банани</span>
+        <span class="econ-tag">🫘 Соя</span>
+        <span class="econ-tag">🍊 Цитруси</span>
+        <span class="econ-tag">🍫 Какао</span>
+        <span class="econ-tag">💛 Памук</span>
+      </div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-icon">🐄</div>
+      <div class="econ-title">Животновъдство</div>
+      <div class="econ-desc">Силно развито говедовъдство и овцевъдство. Лами – традиционни животни в Перу и Боливия.</div>
+      <div class="econ-items">
+        <span class="econ-tag">🐄 Говедовъдство</span>
+        <span class="econ-tag">🐑 Овцевъдство</span>
+        <span class="econ-tag">🦙 Лами</span>
+        <span class="econ-tag">🐷 Свиневъдство</span>
+      </div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-icon">⛏️</div>
+      <div class="econ-title">Полезни изкопаеми</div>
+      <div class="econ-desc">Огромни запаси от разнообразни суровини. Бразилия – световен лидер по редица рудни богатства.</div>
+      <div class="econ-items">
+        <span class="econ-tag">⛽ Нефт</span>
+        <span class="econ-tag">🔩 Желязна руда</span>
+        <span class="econ-tag">🔋 Литий</span>
+        <span class="econ-tag">💛 Злато</span>
+        <span class="econ-tag">💎 Диаманти</span>
+        <span class="econ-tag">🟫 Манган</span>
+        <span class="econ-tag">⚡ Боксит</span>
+        <span class="econ-tag">📌 Чилска селитра</span>
+      </div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-icon">🏭</div>
+      <div class="econ-title">Промишленост</div>
+      <div class="econ-desc">Обработващата промишленост е развита в Бразилия и Аржентина – 60% от производството на континента.</div>
+      <div class="econ-items">
+        <span class="econ-tag">✈️ Самолети</span>
+        <span class="econ-tag">🚗 Автомобили</span>
+        <span class="econ-tag">⚓ Корабостроене</span>
+        <span class="econ-tag">💻 Електроника</span>
+        <span class="econ-tag">🧪 Химия</span>
+        <span class="econ-tag">🍞 Хранителна</span>
+      </div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-icon">🚢</div>
+      <div class="econ-title">Транспорт</div>
+      <div class="econ-desc">Водният транспорт по реките е най-добре развит. Важни пристанища на двата океана.</div>
+      <div class="econ-items">
+        <span class="econ-tag">⛵ Речен транспорт</span>
+        <span class="econ-tag">🚢 Буенос Айрес</span>
+        <span class="econ-tag">🚢 Рио де Жанейро</span>
+        <span class="econ-tag">🛣️ Трансамазонска</span>
+      </div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-icon">🗺️</div>
+      <div class="econ-title">Туризъм</div>
+      <div class="econ-desc">Много добри условия – природни, исторически и културни. Привличат туристи от целия свят.</div>
+      <div class="econ-items">
+        <span class="econ-tag">🗿 Мачу Пикчу</span>
+        <span class="econ-tag">🌊 Игуасу</span>
+        <span class="econ-tag">🎭 Карнавал Рио</span>
+        <span class="econ-tag">🦎 Галапагос</span>
+        <span class="econ-tag">🏖️ Плажове</span>
+        <span class="econ-tag">🦙 Патагония</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WILDLIFE -->
+<section id="wildlife">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Флора и Фауна</div>
+    <h2 class="section-title">Животински и растителен свят</h2>
+    <p class="section-desc">Южна Америка е най-биоразнообразният континент – само в екваториалните гори: 4000+ дървесни вида, 1500+ цветя, 400+ вида птици</p>
+  </div>
+  <div class="wildlife-slider">
+    <div class="animal-card"><span class="animal-emoji">🐆</span><div class="animal-name">Ягуар</div><div class="animal-zone">Селвас</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦥</span><div class="animal-name">Ленивец</div><div class="animal-zone">Селвас</div></div>
+    <div class="animal-card"><span class="animal-emoji">🐊</span><div class="animal-name">Кайман</div><div class="animal-zone">Амазонка</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦈</span><div class="animal-name">Пираня</div><div class="animal-zone">Реки</div></div>
+    <div class="animal-card"><span class="animal-emoji">🐍</span><div class="animal-name">Анаконда</div><div class="animal-zone">Блата</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦜</span><div class="animal-name">Папагал</div><div class="animal-zone">Гори</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦅</span><div class="animal-name">Кондор</div><div class="animal-zone">Анди</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦙</span><div class="animal-name">Лама</div><div class="animal-zone">Анди</div></div>
+    <div class="animal-card"><span class="animal-emoji">🐻</span><div class="animal-name">Очилата мечка</div><div class="animal-zone">Анди</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦎</span><div class="animal-name">Игуана</div><div class="animal-zone">Галапагос</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦚</span><div class="animal-name">Нанду</div><div class="animal-zone">Пампа</div></div>
+    <div class="animal-card"><span class="animal-emoji">🐬</span><div class="animal-name">Речен делфин</div><div class="animal-zone">Амазонка</div></div>
+    <div class="animal-card"><span class="animal-emoji">🦔</span><div class="animal-name">Тапир</div><div class="animal-zone">Гори/Савани</div></div>
+    <div class="animal-card"><span class="animal-emoji">🌿</span><div class="animal-name">Хевея (каучук)</div><div class="animal-zone">Амазония</div></div>
+    <div class="animal-card"><span class="animal-emoji">🌺</span><div class="animal-name">Виктория Регия</div><div class="animal-zone">Амазонка</div></div>
+    <div class="animal-card"><span class="animal-emoji">🎋</span><div class="animal-name">Пау Бразил</div><div class="animal-zone">Гори</div></div>
+  </div>
+</div>
+</section>
+
+<!-- FACTS -->
+<section id="facts">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Знаеш ли, че...</div>
+    <h2 class="section-title">Интересни факти</h2>
+  </div>
+  <div class="facts-masonry">
+    <div class="fact-card"><div class="fact-num">1</div><div class="fact-text">🌍 <strong>Южна Америка</strong> е единственият континент, изцяло в Западното полукълбо.</div></div>
+    <div class="fact-card"><div class="fact-num">2</div><div class="fact-text">🌊 <strong>р. Амазонка</strong> носи 1/5 от прясната вода на цялата планета. Речното й корито е толкова широко, че в него се губят острови.</div></div>
+    <div class="fact-card"><div class="fact-num">3</div><div class="fact-text">🏔️ <strong>Акончагуа</strong> (6962 м) е най-високата точка на Западното полукълбо и на Южна Америка.</div></div>
+    <div class="fact-card"><div class="fact-num">4</div><div class="fact-text">🌵 <strong>Пустинята Атакама</strong> е най-сухото място на Земята – само 1.5 мм валежи годишно! На места не е валяло <strong>500 години</strong>!</div></div>
+    <div class="fact-card"><div class="fact-num">5</div><div class="fact-text">💧 <strong>Водопадът Анхел</strong> (1054 м) е най-високият водопад в света – намира се на приток на р. Ориноко, Венецуела.</div></div>
+    <div class="fact-card"><div class="fact-num">6</div><div class="fact-text">🌴 Екваториалните гори на Южна Америка са <strong>най-богатите на видово разнообразие</strong> екосистеми – повече от 2000 вида пеперуди!</div></div>
+    <div class="fact-card"><div class="fact-num">7</div><div class="fact-text">🏙️ <strong>Буенос Айрес</strong> – „Париж на Южна Америка", е домакин на половината население на Аржентина.</div></div>
+    <div class="fact-card"><div class="fact-num">8</div><div class="fact-text">🗿 Руините <strong>Мачу Пикчу</strong> в Перу се намират на 2430 м н.в. и са UNESCO световно наследство.</div></div>
+    <div class="fact-card"><div class="fact-num">9</div><div class="fact-text">🐟 Пираните могат да изядат крава за <strong>минути</strong> – само 20-30 см дълги, но зъбите им са остри като скалпел.</div></div>
+    <div class="fact-card"><div class="fact-num">10</div><div class="fact-text">🧲 <strong>Литий</strong> – "металът на бъдещето" за батерии. Аржентина е 3-ти производител в света!</div></div>
+    <div class="fact-card"><div class="fact-num">11</div><div class="fact-text">⛪ <strong>Статуята на Христос Спасителя</strong> в Рио де Жанейро е 30 м висока и стои на 709 м н.в. на хълма Коркоба.</div></div>
+    <div class="fact-card"><div class="fact-num">12</div><div class="fact-text">🌿 Дървото <strong>пау бразил</strong>, от което произлиза името "Бразилия", е почти напълно изсечено заради ценната му червена боя.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+<div class="section-inner">
+  <div class="section-header">
+    <div class="section-tag">Провери знанията си</div>
+    <h2 class="section-title">Интерактивен тест</h2>
+    <p class="section-desc">20 въпроса за проверка на знанията за Южна Америка</p>
+  </div>
+  <div class="quiz-container">
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-text">
+        <span id="q-current">Въпрос 1 от 20</span>
+        <span id="q-score-live">Резултат: 0</span>
+      </div>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="q-progress" style="width:5%"></div></div>
+    </div>
+    <div class="quiz-card" id="quiz-card">
+      <div class="quiz-question-num" id="q-num">ВЪПРОС 1</div>
+      <div class="quiz-question" id="q-text"></div>
+      <div class="quiz-options" id="q-opts"></div>
+      <div class="quiz-nav">
+        <div id="q-feedback" style="color:#7fb89a;font-size:0.9rem;font-style:italic"></div>
+        <button class="quiz-btn quiz-btn-next" id="q-next" onclick="nextQuestion()" disabled>Следващ въпрос →</button>
+      </div>
+    </div>
+    <div class="quiz-score-display" id="quiz-score">
+      <div class="score-circle">
+        <div class="score-num" id="final-score">0</div>
+        <div class="score-label">от 20</div>
+      </div>
+      <div class="score-title" id="score-title">Отличен резултат!</div>
+      <div class="score-subtitle" id="score-sub"></div>
+      <button class="quiz-restart" onclick="restartQuiz()">🔄 Опитай отново</button>
+      <div class="score-answers" id="score-answers"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="footer-title">🌎 Южна Америка</div>
+  <div class="footer-sub">Образователен портал по география • Съдържанието е базирано на учебна програма за ученици</div>
+</footer>
+
+<script>
+// ---- PARTICLES ----
+(function(){
+  const c = document.getElementById('particles');
+  for(let i=0;i<30;i++){
+    const s = document.createElement('span');
+    s.style.cssText = `left:${Math.random()*100}%;animation-duration:${6+Math.random()*10}s;animation-delay:${-Math.random()*10}s;width:${1+Math.random()*2}px;height:${1+Math.random()*2}px`;
+    c.appendChild(s);
+  }
+})();
+
+// ---- ACCORDION ----
+function toggleZone(el){
+  const body = el.nextElementSibling;
+  const tog = el.querySelector('.zone-toggle');
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.zone-body').forEach(b=>{b.classList.remove('open')});
+  document.querySelectorAll('.zone-toggle').forEach(t=>{t.style.transform=''});
+  if(!isOpen){body.classList.add('open');tog.style.transform='rotate(180deg)';}
+}
+
+// ---- COUNTRY TABS ----
+function showCountry(id, tab){
+  document.querySelectorAll('.country-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.country-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  tab.classList.add('active');
+}
+
+// ---- HYDROGRAMS ----
+const riverData = {
+  amazon: [8,9,15,18,15,12,10,8,7,8,10,9],
+  parana: [15,14,13,12,11,10,8,7,8,9,12,14],
+  orinoco: [5,4,5,7,10,14,17,15,12,10,8,6]
+};
+function buildBars(id, data, color){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const max = Math.max(...data);
+  data.forEach(v=>{
+    const bar = document.createElement('div');
+    bar.className = 'hbar';
+    const pct = (v/max)*100;
+    bar.style.cssText = `height:${pct}%;background:${color};opacity:0.85`;
+    el.appendChild(bar);
+  });
+}
+buildBars('amazon-bars', riverData.amazon, 'linear-gradient(to top,#1a5276,#2980b9)');
+buildBars('parana-bars', riverData.parana, 'linear-gradient(to top,#1e8449,#2ecc71)');
+buildBars('orinoco-bars', riverData.orinoco, 'linear-gradient(to top,#7d6608,#f1c40f)');
+
+// ---- QUIZ ----
+const questions = [
+  {q:"Коя е най-дългата и пълноводна река на Земята?",opts:["р. Нил","р. Амазонка","р. Парана","р. Конго"],a:1,ex:"р. Амазонка е с дължина 7025 km и носи 1/5 от прясната вода на планетата."},
+  {q:"Кой е най-висшият връх на Южна Америка и Западното полукълбо?",opts:["Котопахи","Денали","Акончагуа","Уайна Потоси"],a:2,ex:"Акончагуа е 6962 м и се намира в Аржентина."},
+  {q:"Пустинята Атакама е най-сухото място на Земята. В коя страна се намира?",opts:["Аржентина","Бразилия","Чили","Перу"],a:2,ex:"Атакама се простира по тихоокеанското крайбрежие на Чили. Валежи само 1.5 мм/г."},
+  {q:"Как се казва езерото на границата между Перу и Боливия, намиращо се на 3812 м н.в.?",opts:["Маракайбо","Титикака","Поопо","Ла Плата"],a:1,ex:"Езерото Титикака е най-голямото высоко планинско езеро – плавателно."},
+  {q:"Коя е столицата на Бразилия?",opts:["Рио де Жанейро","Сао Пауло","Буенос Айрес","Бразилия"],a:3,ex:"Бразилия е специално изграденият нов столичен град, открит за столица от 1960 г."},
+  {q:"Какво означава названието 'Аржентина'?",opts:["Земята на огъня","Страната на среброто","Земята на пампите","Синята страна"],a:1,ex:"Argentum на латински означава сребро. Елементът сребро е №47 в периодичната таблица."},
+  {q:"Водопадът Анхел (Ангел) е най-висок в света. Колко метра е той?",opts:["480 м","750 м","1054 м","1200 м"],a:2,ex:"Водопадът Анхел е 1054 м висок и се намирана приток на р. Ориноко, Венецуела."},
+  {q:"Какъв е официалният език на Бразилия?",opts:["Испански","Португалски","Бразилски","Английски"],a:1,ex:"Бразилия е единствената страна в ЮА, където се говори португалски (от колонизатори XVI в.)."},
+  {q:"Коя природна зона обхваща 2/3 от Южна Америка?",opts:["Степи и пустини","Екваториални гори и савани","Смесени гори","Тундра"],a:1,ex:"Зоните на екваториалните гори и саваните обхващат 2/3 от территорията на континента."},
+  {q:"Как се казват традиционните аржентински животновъди в Пампата?",opts:["Льянерос","Гаучос","Ранчерос","Вакерос"],a:1,ex:"Гаучосите са символ на Аржентина и са прозвището на аржентинския национален отбор по футбол."},
+  {q:"Кой ВЕЦ произвежда 85% от електроенергията на Бразилия и е обявен за съвременно чудо на света?",opts:["Три клисури","Сяолангди","Итайпу","Асуан"],a:2,ex:"ВЕЦ Итайпу на р. Парана е обявен за едно от 7-те съвременни чудеса от ASCE (1994 г.)."},
+  {q:"Каква е средната гъстота на населнието в Южна Америка?",opts:["5 д/км²","24.6 д/км²","85 д/км²","120 д/км²"],a:1,ex:"Средната гъстота е 24.6 д/км², но е неравномерно разпределена – концентрирано по крайбрежията."},
+  {q:"В коя страна се намират руините на Мачу Пикчу?",opts:["Бразилия","Боливия","Чили","Перу"],a:3,ex:"Мачу Пикчу е инкски град на 2430 м н.в. в Перуанските Анди."},
+  {q:"Каква е площта на Бразилия?",opts:["2.7 млн. км²","5.5 млн. км²","8.5 млн. км²","17.8 млн. км²"],a:2,ex:"Бразилия е 8 515 000 км² – 5-та по площ в света, почти половината от ЮА."},
+  {q:"Коя е реката с най-голям водосборен басейн в света?",opts:["р. Конго","р. Нил","р. Амазонка","р. Яндзъ"],a:2,ex:"Водосборният басейн на Амазонка е около 7 млн. км² – най-голям на Земята."},
+  {q:"На коя граница се намират водопадите Игуасу?",opts:["Бразилия-Боливия","Бразилия-Аржентина","Аржентина-Чили","Парагвай-Бразилия"],a:1,ex:"Каскадата Игуасу от 275 водопада е на границата Бразилия-Аржентина на р. Парана."},
+  {q:"Коя е най-богатата на видово разнообразие природна зона в Южна Америка?",opts:["Пампата","Патагония","Атакама","Екваториалните гори"],a:3,ex:"Екваториалните гори (Селвас) са с над 4000 вида дървета, 2000+ вида пеперуди и много животни."},
+  {q:"Кой водопад е символ на Венецуела?",opts:["Игуасу","Виктория","Анхел (Ангел)","Ниагара"],a:2,ex:"Анхел (1054 м) е на р. Чурун, приток на Ориноко, и е открит от авиатора Джими Анхел (1933 г.)."},
+  {q:"Какъв е политическия строй на Бразилия?",opts:["Монархия","Конфедерация","Федерална република","Унитарна република"],a:2,ex:"Бразилия е федерална република, обединяваща 26 щата и 1 федерален окръг."},
+  {q:"Как се казват бедните квартали в бразилските градове?",opts:["Баррио","Трущоби","Фавели","Слуми"],a:2,ex:"Фавелите са бедните квартали (фавели), образувани поради бързото нарастване на градското население."},
+];
+
+let current=0, score=0, answered=false, userAnswers=[];
+
+function renderQuestion(){
+  const q = questions[current];
+  document.getElementById('q-num').textContent = `ВЪПРОС ${current+1}`;
+  document.getElementById('q-current').textContent = `Въпрос ${current+1} от ${questions.length}`;
+  document.getElementById('q-text').textContent = q.q;
+  document.getElementById('q-progress').style.width = `${((current)/questions.length)*100+5}%`;
+  document.getElementById('q-feedback').textContent = '';
+  document.getElementById('q-next').disabled = true;
+  const opts = document.getElementById('q-opts');
+  opts.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  q.opts.forEach((opt,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.innerHTML = `<span class="quiz-opt-letter">${letters[i]}</span>${opt}`;
+    btn.onclick = ()=>selectAnswer(i);
+    opts.appendChild(btn);
+  });
+  answered = false;
+}
+
+function selectAnswer(idx){
+  if(answered) return;
+  answered = true;
+  const q = questions[current];
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach(o=>o.classList.add('answered'));
+  opts[idx].classList.add(idx===q.a ? 'correct' : 'wrong');
+  opts[q.a].classList.add('correct');
+  const correct = idx===q.a;
+  if(correct){ score++; document.getElementById('q-score-live').textContent=`Резултат: ${score}`; }
+  document.getElementById('q-feedback').textContent = (correct ? '✅ Правилно! ' : '❌ Грешно! ') + q.ex;
+  document.getElementById('q-next').disabled = false;
+  userAnswers.push({q:q.q, correct, chosen:q.opts[idx], right:q.opts[q.a]});
+}
+
+function nextQuestion(){
+  current++;
+  if(current >= questions.length){ showScore(); return; }
+  renderQuestion();
+}
+
+function showScore(){
+  document.getElementById('quiz-card').style.display='none';
+  document.getElementById('q-current').textContent='Тестът приключи!';
+  document.getElementById('q-progress').style.width='100%';
+  const sd = document.getElementById('quiz-score');
+  sd.style.display='block';
+  document.getElementById('final-score').textContent = score;
+  const pct = Math.round((score/questions.length)*100);
+  let title, sub;
+  if(pct>=90){title='🏆 Отличен резултат!';sub=`${pct}% – Ти си истински експерт по Южна Америка!`;}
+  else if(pct>=70){title='👏 Много добре!';sub=`${pct}% – Знаеш много за Южна Америка!`;}
+  else if(pct>=50){title='📚 Добре!';sub=`${pct}% – Повтори материала и ще се справиш по-добре!`;}
+  else{title='💪 Продължавай!';sub=`${pct}% – Прегледай урока и опитай отново!`;}
+  document.getElementById('score-title').textContent = title;
+  document.getElementById('score-sub').textContent = sub;
+  const sa = document.getElementById('score-answers');
+  sa.innerHTML = '<div style="font-weight:700;color:#c8f0d5;margin-bottom:1rem;font-size:1rem">Преглед на отговорите:</div>';
+  userAnswers.forEach((a,i)=>{
+    const div = document.createElement('div');
+    div.className = 'sa-item ' + (a.correct ? 'sa-correct' : 'sa-wrong');
+    div.innerHTML = `<span class="sa-icon">${a.correct?'✅':'❌'}</span><div><div class="sa-q">${i+1}. ${a.q}</div><div class="sa-a">${a.correct?'Правилно: '+a.right:'Избрал: '+a.chosen+' → Правилно: '+a.right}</div></div>`;
+    sa.appendChild(div);
+  });
+}
+
+function restartQuiz(){
+  current=0;score=0;answered=false;userAnswers=[];
+  document.getElementById('quiz-card').style.display='flex';
+  document.getElementById('quiz-score').style.display='none';
+  document.getElementById('q-score-live').textContent='Резултат: 0';
+  renderQuestion();
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
