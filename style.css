@@ -291,3 +291,9 @@ footer{background:#061510;border-top:1px solid rgba(46,204,113,0.1);padding:3rem
 }
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
 .hamburger span{width:24px;height:2px;background:var(--green-light);border-radius:2px;transition:all 0.3s}
+img.twemoji {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.1em;
+  display: inline;
+}
