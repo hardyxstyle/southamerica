@@ -1,7 +1,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  twemoji.parse(document.body);
-});  window.addEventListener('scroll',()=>{
+  const targets = document.querySelectorAll('#countries-table, #capitals-list, #countries-list, .country-tab, .country-panel');
+  targets.forEach(el => {
+    if(el) twemoji.parse(el);
+  });
+}); window.addEventListener('scroll',()=>{
   const scrolled = (window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
   document.getElementById('scroll-progress').style.width = scrolled+'%';
 });
