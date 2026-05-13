@@ -1,4 +1,7 @@
-  window.addEventListener('scroll',()=>{
+
+document.addEventListener('DOMContentLoaded', () => {
+  twemoji.parse(document.body);
+});  window.addEventListener('scroll',()=>{
   const scrolled = (window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
   document.getElementById('scroll-progress').style.width = scrolled+'%';
 });
