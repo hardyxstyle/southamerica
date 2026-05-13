@@ -1,8 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  const targets = document.querySelectorAll('#countries-table, #capitals-list, #countries-list, .country-tab, .country-panel');
-  targets.forEach(el => {
-    if(el) twemoji.parse(el);
+  twemoji.parse(document.body, {
+    folder: 'svg',
+    ext: '.svg',
+    className: 'twemoji'
   });
 }); window.addEventListener('scroll',()=>{
   const scrolled = (window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
